@@ -2,7 +2,7 @@
 title: "Homework: Reproducibility and Professional Communication"
 execute:
   error: true
-author: "Your Name"
+author: "Sukainah "
 output: html_document
 
 ---
@@ -47,19 +47,37 @@ Then, using what you know about R and Python, try to debug the problem using the
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+its seems complete, the question is trying to append string to a vector meals 
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+yes ,reproducible,where the code show us the function,but I cant see how meals initilized.
+to improve it we need to include example shows initializing 
+
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+there is no extra code so yes,its minimal .
 
 4. Does the question describe any attempted solutions?
+I cant see any debugging attempts, or any corrections.
+the code create function with local copy of meals ,but we dont have the vector meals so now I will try to add this vector and run the code 
 
-> <!-- Your answer here -->
+
+```{r}
+# define meals vector 
+meals<-c("veggy","meditarian")
+add <- function(str, meals) {
+  return(append(meals, as.character(str)))
+}
+#add other meal type to the vector 
+meals <- add("diet", meals)
+#check my results
+print(meals)
+
+
+```
+
 
 
 ## Function not working R
@@ -98,20 +116,31 @@ mean(z$nitrate,na.rm=TRUE)
 ---
 
 1. Are the question and problem description complete?
-
-> <!-- Your answer here -->
+I can the error message and the working code parts, and also mention that they follow coursera course.
+so yes I can say complete.
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
-
-> <!-- Your answer here -->
+I dont have the file path to run the code exactly , but the error message explain the logice issue.
+I think the best thing to improve is to built data set ,
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
+minimal, though the personal file path cant be generated,but still comparing with working manual code will help us
 
-> <!-- Your answer here -->
+
+
 
 4. Does the question describe any attempted solutions?
+yes, it mentioned than when trype steps indivdually ,it works, which help us ,
+```{r}
 
-> <!-- Your answer here -->
+pollutantmean <- function(directory, pollutant, id = 1:332){
+    x <- list.files(directory, full.names=TRUE)  # Use parameter, not hardcoded path
+    y <- lapply(x, read.csv)
+    z <- do.call(rbind.data.frame, y[id])
+    mean(z[[pollutant]], na.rm=TRUE)  # Use [[ ]] instead of $
+}
+```
+
 
 
 ## Inexplicable error when trying to export my R notebook
@@ -140,19 +169,24 @@ You can find this sample file [here](https://raw.githubusercontent.com/unl-stati
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+The question is not totally complete ,we dont see the the actual data and full context,the error message is given, but we cant see the actual data structure.
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+some parts are  reproducible,I can see the code but not the data.it could be improve  by including a sample of the data .
 
-3. Is the example minimal? Does it include extra code or information that is not necessary?
+3. Is the example minimal? Does it include extra code or information that is not necessary
 
-> <!-- Your answer here -->
+It includes more code than necessary for a minimal example. 
+
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+the question mentions checking for spelling errors and verifying the column exists.
+
+```{r}
+
+```
 
 
 ## Python if elif else statement
@@ -197,19 +231,20 @@ if country == "Canada":
 
 1. Are the question and problem description complete?
 
-> <!-- Your answer here -->
+I can see that  the question describes the problem whic is shipping costs arent calculating correctly and always show the lowest tier.
 
 2. Is the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?
 
-> <!-- Your answer here -->
+I think yes, its reproducible. I can see the code is complete and the problem description is there
+it can be improved  by showing example inputs and expected .
 
 3. Is the example minimal? Does it include extra code or information that is not necessary?
 
-> <!-- Your answer here -->
+ it's minimal ,it shows only the  conditional logic
 
 4. Does the question describe any attempted solutions?
 
-> <!-- Your answer here -->
+No they didt mention any debugging attempts or any  tried correction.
 
 
 # Professional Communication
@@ -228,7 +263,7 @@ In your slides:
 - Provide your favorite plot, generated in either R or python. (This can be one you've generated in this class). Ensure that the code does not show, but the plot does.
 - Provide a link to your CV, which you will generate in the next part.
 
-## CV
+https://www.overleaf.com/read/ntpnzsbdshms#522273
 
 Select a CV template that uses either LaTeX or Markdown:
 
