@@ -1,0 +1,40 @@
+---
+title: "My Introduction"
+author: "Sukainah Rawashdeh"
+format: revealjs
+---
+
+## About Me
+
+**Name:** Sukainah Rawashdeh
+
+![](Sukainah.Rawashdeh.Photo.jpg)
+
+## Biographical Information
+
+I was born in Jordan, in a village where Olive trees are the real treasure.
+
+## Favorite Animal
+
+![](camel.petra.jpg)
+
+
+## Favorite Plot
+
+```{r}
+library(ggplot2)
+library(dplyr)
+cookies <- read.csv("cookies.csv")
+cookies %>%
+  group_by(Recipe_Index) %>%
+  summarise(Num_Ingredients = n()) %>%
+  ggplot(aes(x = Num_Ingredients)) +
+  geom_histogram(binwidth=1, fill="pink", color="black") +
+  labs(title="Number of Ingredients per Recipe", x="Number of Ingredients", y="Count of Recipes")
+
+```
+
+
+## My CV
+
+<https://www.overleaf.com/read/ntpnzsbdshms#522273>
